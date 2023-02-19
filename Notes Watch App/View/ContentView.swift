@@ -13,8 +13,52 @@ struct ContentView: View {
     @State private var text: String = ""
     
     //MARK: - Function
+    
+    func getDocumentsDirectory () -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return path[0]
+    }
+    
     func save() {
-        dump(notes)
+//        dump(notes)
+        do {
+            // 1. Convert the notes array data using JSON encoder
+            let data = try JSONEncoder().encode(notes)
+            
+            // 2. Create a new URL to save the file using getDocumentsDirectory
+            let url = getDocumentsDirectory().appendingPathComponent("notes")
+            
+            // 3. Write data to givem URL
+            try data.write(to: url)
+            
+        } catch {
+            print("Saving data has failed")
+        }
+    }
+    
+    func load () {
+        DispatchQueue.main.async {
+            do {
+                // 1. get the notes URL path
+                let url = getDocumentsDirectory().appendingPathComponent("notes")
+                
+                // 2. Create a new property for the data
+                let data = try Data(contentsOf: url)
+                
+                // 3. Decode the data
+                notes = try JSONDecoder().decode([Note].self, from: data)
+                
+            } catch {
+                // do nothing
+            }
+        }
+    }
+    
+    func delete(offsets: IndexSet) {
+        withAnimation {
+            notes.remove(atOffsets: offsets)
+            save()
+        }
     }
     
     //MARK: - body
@@ -52,9 +96,36 @@ struct ContentView: View {
             
             Spacer()
             
-            Text("\(notes.count)")
+            if notes.count >= 1 {
+                List {
+                    ForEach(0..<notes.count, id: \.self) { note in
+                        HStack {
+                            Capsule()
+                                .frame(width: 4)
+                                .foregroundColor(.accentColor)
+                            
+                            Text(notes[note].text)
+                                .lineLimit(1)
+                                .padding(.leading, 5)
+                        }//:HSTACK
+                    } //: LOOP
+                    .onDelete(perform: delete)
+                }
+            } else {
+                Spacer()
+                Image(systemName: "note.text")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.gray)
+                    .opacity(0.25)
+                    .padding(25)
+                Spacer()
+            }//:LIST
         }//: Vstack
         .navigationTitle("Notes")
+        .onAppear(perform: {
+            load()
+        })
     }
 }
 
