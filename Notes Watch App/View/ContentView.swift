@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var notes: [Note] = [Note]()
     @State private var text: String = ""
     
+    
     //MARK: - Function
     
     func getDocumentsDirectory () -> URL {
