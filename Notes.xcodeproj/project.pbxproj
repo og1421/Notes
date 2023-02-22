@@ -11,6 +11,7 @@
 		8525825A29A2C7D400EEB6E2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525825929A2C7D400EEB6E2 /* Note.swift */; };
 		854D80B929A3D6DD003DE32C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D80B829A3D6DD003DE32C /* Credits.swift */; };
 		854D80BC29A3D808003DE32C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D80BB29A3D808003DE32C /* HeaderView.swift */; };
+		854D80BE29A590E3003DE32C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D80BD29A590E3003DE32C /* Settings.swift */; };
 		8571D97729A19DE100EF747A /* Notes Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8571D97629A19DE100EF747A /* Notes Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8571D97C29A19DE100EF747A /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571D97B29A19DE100EF747A /* NotesApp.swift */; };
 		8571D97E29A19DE100EF747A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571D97D29A19DE100EF747A /* ContentView.swift */; };
@@ -47,6 +48,7 @@
 		8525825929A2C7D400EEB6E2 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		854D80B829A3D6DD003DE32C /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		854D80BB29A3D808003DE32C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		854D80BD29A590E3003DE32C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8571D97029A19DE100EF747A /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8571D97629A19DE100EF747A /* Notes Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notes Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8571D97B29A19DE100EF747A /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				8571D97D29A19DE100EF747A /* ContentView.swift */,
 				850796BF29A3889F0038F1A5 /* DetailView.swift */,
 				854D80B829A3D6DD003DE32C /* Credits.swift */,
+				854D80BD29A590E3003DE32C /* Settings.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				854D80BC29A3D808003DE32C /* HeaderView.swift in Sources */,
 				850796C029A3889F0038F1A5 /* DetailView.swift in Sources */,
 				8571D97C29A19DE100EF747A /* NotesApp.swift in Sources */,
+				854D80BE29A590E3003DE32C /* Settings.swift in Sources */,
 				854D80B929A3D6DD003DE32C /* Credits.swift in Sources */,
 				8525825A29A2C7D400EEB6E2 /* Note.swift in Sources */,
 			);
